@@ -6,6 +6,13 @@ export const en = {
     network: 'Network',
     contact: 'Contact',
     getStarted: 'GET STARTED',
+    brand: 'TULUM RIEGO',
+    changeLanguage: 'Change language',
+    toggleThemeAria: 'Toggle dark/light mode',
+    toggleThemeTitle: 'Toggle theme',
+    openMenuAria: 'Open menu',
+    langEs: 'ES',
+    langEn: 'EN',
   },
   // Hero
   hero: {
@@ -16,6 +23,11 @@ export const en = {
       'Precision irrigation based on real plant needs. We transform arid-zone agriculture through digital technology and algorithmic geometric precision management.',
     cta1: 'REQUEST AUDIT',
     cta2: 'DISCOVER EJE TULUM',
+    visualLabels: {
+      water: 'H₂O',
+      nutrients: 'NPK',
+      ai: 'AI',
+    },
   },
   // Recognition
   recognition: {
@@ -24,8 +36,16 @@ export const en = {
     title2: 'Provincial Innovation Award',
     title3: 'San Juan 2025',
     category: 'Category: Innovative Service',
-    description:
-      'A major recognition awarded by the Provincial Government of San Juan, following a rigorous evaluation by industry professionals and experts from the prestigious Faculty of Engineering of San Juan. This award validates our commitment to technological excellence and water efficiency in the region.',
+    descriptionParts: {
+      intro: 'A major recognition awarded by the ',
+      institution1: 'Provincial Government of San Juan',
+      middle: ', following a rigorous evaluation by industry professionals and experts from the prestigious ',
+      institution2: 'Faculty of Engineering of San Juan',
+      outro:
+        '. This award validates our commitment to technological excellence and water efficiency in the region.',
+    },
+    medalLabel: 'FIRST PLACE',
+    medalYear: 'SAN JUAN 2025',
     ecosystem: 'Tulum Digital Ecosystem',
     altImage: 'Provincial Innovation Award 2025',
   },
@@ -58,6 +78,8 @@ export const en = {
   },
   // Ecosystem
   ecosystem: {
+    heading1: 'Ecosystem',
+    heading2: 'Digital',
     step1: {
       title: '1. Data Capture',
       desc: 'Low-latency nodes capturing soil and atmosphere biometrics in real time.',

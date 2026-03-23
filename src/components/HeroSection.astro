@@ -89,9 +89,9 @@ const { t } = Astro.props;
           <circle cx="160" cy="320" r="5" fill="currentColor" style="color:var(--color-gold);" opacity="0.9"/>
 
           <!-- Labels -->
-          <text x="20"  y="188" font-size="8" fill="currentColor" style="color:var(--color-primary);" opacity="0.7" font-family="Space Grotesk" font-weight="700">H₂O</text>
-          <text x="278" y="188" font-size="8" fill="currentColor" style="color:var(--color-primary);" opacity="0.7" font-family="Space Grotesk" font-weight="700">NPK</text>
-          <text x="140" y="336" font-size="8" fill="currentColor" style="color:var(--color-gold);"   opacity="0.8" font-family="Space Grotesk" font-weight="700">AI</text>
+          <text x="20"  y="188" font-size="8" fill="currentColor" style="color:var(--color-primary);" opacity="0.7" font-family="Space Grotesk" font-weight="700">{t.hero.visualLabels.water}</text>
+          <text x="278" y="188" font-size="8" fill="currentColor" style="color:var(--color-primary);" opacity="0.7" font-family="Space Grotesk" font-weight="700">{t.hero.visualLabels.nutrients}</text>
+          <text x="140" y="336" font-size="8" fill="currentColor" style="color:var(--color-gold);"   opacity="0.8" font-family="Space Grotesk" font-weight="700">{t.hero.visualLabels.ai}</text>
 
           <!-- Center sensor icon area -->
           <circle cx="160" cy="190" r="28" stroke="currentColor" stroke-width="1" style="color:var(--color-primary);" opacity="0.3" fill="none"/>

@@ -6,6 +6,13 @@ export const es = {
     network: 'Red',
     contact: 'Contacto',
     getStarted: 'COMENZAR',
+    brand: 'TULUM RIEGO',
+    changeLanguage: 'Cambiar idioma',
+    toggleThemeAria: 'Alternar modo oscuro/claro',
+    toggleThemeTitle: 'Alternar tema',
+    openMenuAria: 'Abrir menú',
+    langEs: 'ES',
+    langEn: 'EN',
   },
   // Hero
   hero: {
@@ -16,6 +23,11 @@ export const es = {
       'Riego exacto basado en la necesidad real de la planta. Transformamos la agricultura de zonas áridas mediante tecnología digital y gestión algorítmica de precisión geométrica.',
     cta1: 'SOLICITAR AUDITORÍA',
     cta2: 'CONOCER EL EJE TULUM',
+    visualLabels: {
+      water: 'H₂O',
+      nutrients: 'NPK',
+      ai: 'AI',
+    },
   },
   // Recognition
   recognition: {
@@ -24,8 +36,16 @@ export const es = {
     title2: 'Premio Provincial a la Innovación',
     title3: 'San Juan 2025',
     category: 'Categoría: Servicio Innovador',
-    description:
-      'Este es un gran reconocimiento otorgado por el Gobierno Provincial de San Juan, tras una rigurosa evaluación realizada por profesionales del rubro y expertos de la prestigiosa Facultad de Ingeniería de San Juan. Este galardón valida nuestro compromiso con la excelencia tecnológica y la eficiencia hídrica en la región.',
+    descriptionParts: {
+      intro: 'Este es un gran reconocimiento otorgado por el ',
+      institution1: 'Gobierno Provincial de San Juan',
+      middle: ', tras una rigurosa evaluación realizada por profesionales del rubro y expertos de la prestigiosa ',
+      institution2: 'Facultad de Ingeniería de San Juan',
+      outro:
+        '. Este galardón valida nuestro compromiso con la excelencia tecnológica y la eficiencia hídrica en la región.',
+    },
+    medalLabel: 'PRIMER PUESTO',
+    medalYear: 'SAN JUAN 2025',
     ecosystem: 'Ecosistema Tulum Digital',
     altImage: 'Premio Provincial a la Innovación 2025',
   },
@@ -58,6 +78,8 @@ export const es = {
   },
   // Ecosystem
   ecosystem: {
+    heading1: 'Ecosistema',
+    heading2: 'Digital',
     step1: {
       title: '1. Captura de Datos',
       desc: 'Nodos de baja latencia capturando biometría de suelo y atmósfera en tiempo real.',

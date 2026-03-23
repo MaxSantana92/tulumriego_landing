@@ -27,11 +27,11 @@ Documento vivo para registrar deuda tecnica detectada durante la implementacion 
 - **Criterio de cierre:** Sin dependencias remotas de fuentes de texto ni iconografia.
 
 ### 3) Uso de `set:html` en contenido traducido
-- **Estado:** Pendiente (sera Fase 3).
-- **Impacto:** Riesgo potencial de XSS futuro si el contenido deja de ser 100% controlado.
+- **Estado:** Cerrada (Fase 3 ejecutada).
+- **Impacto:** Riesgo mitigado al eliminar render HTML inyectado.
 - **Donde aplica:** `src/components/RecognitionSection.astro`.
-- **Accion requerida:** Reemplazar por render seguro con segmentos tipados en i18n.
-- **Criterio de cierre:** Eliminado `set:html` para traducciones.
+- **Accion ejecutada:** Reemplazo por render seguro usando `descriptionParts` tipados en `src/i18n/es.ts` y `src/i18n/en.ts`.
+- **Criterio de cierre:** Sin `set:html` para traducciones y sin interpolacion de HTML en runtime.
 
 ### 4) Formulario sin pipeline robusto de conversion
 - **Estado:** Pendiente (sera Fase 4).
@@ -66,7 +66,7 @@ Documento vivo para registrar deuda tecnica detectada durante la implementacion 
 - [ ] `SITE_URL` configurado en entorno productivo.
 - [x] Fuentes de texto self-host + `font-display: swap` + `preload`.
 - [x] Material Symbols localizado (sin carga remota en runtime).
-- [ ] Eliminado `set:html`.
+- [x] Eliminado `set:html`.
 - [ ] Formulario validado y conectado a Formspree.
 - [ ] Verificacion Search Console (`/` y `/en/` inspeccionadas).
 - [ ] Lighthouse movil con mejora en FCP/LCP.
