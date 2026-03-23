@@ -1,0 +1,60 @@
+---
+import type { Translations } from '../i18n/index';
+interface Props { t: Translations; }
+const { t } = Astro.props;
+
+const cards = [
+  { icon: 'monitoring',             color: 'primary', title: t.impact.card1.title, desc: t.impact.card1.desc, link: t.impact.card1.link },
+  { icon: 'water_drop',             color: 'gold',    title: t.impact.card2.title, desc: t.impact.card2.desc, link: t.impact.card2.link },
+  { icon: 'precision_manufacturing',color: 'primary', title: t.impact.card3.title, desc: t.impact.card3.desc, link: t.impact.card3.link },
+];
+---
+
+<section id="technology" class="reveal" style="padding:6rem 0 8rem;position:relative;overflow:hidden;">
+  <!-- Top ambient glow -->
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:200px;border-radius:50%;background:var(--color-primary);filter:blur(140px);opacity:0.035;pointer-events:none;"></div>
+
+  <div style="max-width:80rem;margin:0 auto;padding:0 2rem;position:relative;z-index:10;">
+
+    <!-- Header -->
+    <div class="reveal" style="text-align:center;margin-bottom:5rem;">
+      <h2 class="font-headline" style="font-size:clamp(2rem,5vw,3.75rem);font-weight:900;letter-spacing:-0.04em;text-transform:uppercase;font-style:italic;color:var(--color-text);margin-bottom:1.5rem;">
+        {t.impact.title1}
+        <span class="glow-text-gold" style="color:var(--color-gold);"> {t.impact.title2}</span>
+      </h2>
+      <div style="width:8rem;height:4px;margin:0 auto;background:linear-gradient(90deg,var(--color-primary),var(--color-gold),var(--color-primary));"></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="stagger-container" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;">
+      {cards.map(card => (
+        <div class="crystalline-card stagger-item" style="padding:3rem;position:relative;overflow:hidden;cursor:pointer;">
+          <!-- Corner accent -->
+          <div style={`position:absolute;top:-2.5rem;right:-2.5rem;width:7rem;height:7rem;background:var(--color-${card.color==='gold'?'gold':'primary'});opacity:0.06;rotate:45deg;pointer-events:none;`}></div>
+
+          <!-- Icon block -->
+          <div style="margin-bottom:2.5rem;position:relative;">
+            <div class="poly-cta" style={`width:4.5rem;height:4.5rem;background:var(--color-${card.color==='gold'?'gold':'primary'});opacity:0.1;border:1px solid var(--color-${card.color==='gold'?'gold':'primary'});display:inline-flex;align-items:center;justify-content:center;`}></div>
+            <span class="material-symbols-outlined" style={`position:absolute;left:0.6rem;top:0.4rem;font-size:2.75rem;color:var(--color-${card.color==='gold'?'gold':'primary'});`}>{card.icon}</span>
+          </div>
+
+          <h3 class="font-headline" style="font-size:1.6rem;font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:1.25rem;color:var(--color-text);">{card.title}</h3>
+
+          <p style="font-size:0.9rem;line-height:1.7;margin-bottom:2rem;color:var(--color-text-muted);">{card.desc}</p>
+
+          <div class="card-link font-headline" style={`display:flex;align-items:center;gap:0.5rem;font-size:0.65rem;font-weight:900;letter-spacing:0.2em;text-transform:uppercase;transition:transform .25s;color:var(--color-${card.color==='gold'?'gold':'primary'});`}>
+            <span>{card.link}</span>
+            <span class="material-symbols-outlined" style="font-size:1rem;">chevron_right</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .stagger-container { grid-template-columns: 1fr !important; }
+  }
+  .crystalline-card:hover .card-link { transform: translateX(8px); }
+</style>

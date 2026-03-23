@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import RecognitionSection from '../../components/RecognitionSection.astro';
+import ImpactSection from '../../components/ImpactSection.astro';
+import MissionEcosystem from '../../components/MissionEcosystem.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import { useTranslations } from '../../i18n/index';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<Layout lang={lang} title="Tulum Riego | Water Intelligence for the Future of Farming">
+  <HeroSection t={t} />
+  <RecognitionSection t={t} />
+  <ImpactSection t={t} />
+  <MissionEcosystem t={t} />
+  <ContactSection t={t} />
+</Layout>

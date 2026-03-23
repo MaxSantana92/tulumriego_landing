@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, useTranslations, type Locale } from '../i18n/index';
+
+interface Props {
+  title?: string;
+  lang?: Locale;
+}
+
+const { title = 'Tulum Riego | Inteligencia Hídrica para el Futuro del Campo', lang } = Astro.props;
+const currentLang: Locale = lang ?? getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+---
+
+<!doctype html>
+<html lang={currentLang} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Tulum Riego - Inteligencia Hídrica. Precision irrigation powered by AI and real-time sensor data." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+
+    <!-- Anti-FOUC theme script — runs synchronously before paint -->
+    <script is:inline>
+      (function() {
+        try {
+          var stored = localStorage.getItem('tulum-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'light' || (!stored && !prefersDark)) {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch(e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Subtle noise texture overlay -->
+    <div aria-hidden="true" style="
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXVדדדdXVzc3OBgYGJiYlra2uRkZGPj4+Hh4eMjIyVlZWQkJCXl5ecnJyZmZmlpaWPj4+tra3FxcWzs7O7u7uBbyqNAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB1S0BdAAAAhklEQVR4nO3BSQ0AQAgDwNK/0y0/EAXBR/v2rscvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAHACaVAE8AAAAASUVORK5CYII=);
+      opacity: 0.018; mix-blend-mode: overlay;
+    "></div>
+
+    <Nav lang={currentLang} t={t} />
+
+    <main style="position: relative; z-index: 10; padding-top: 5rem;">
+      <slot />
+    </main>
+
+    <Footer lang={currentLang} t={t} />
+
+    <!-- Scroll reveal observer -->
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }),
+        { threshold: 0.08 }
+      );
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-container')
+        .forEach(el => observer.observe(el));
+    </script>
+
+    <!-- Theme toggle -->
+    <script>
+      function applyTheme(dark: boolean) {
+        document.documentElement.classList.toggle('dark', dark);
+        try { localStorage.setItem('tulum-theme', dark ? 'dark' : 'light'); } catch(e) {}
+      }
+      document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyTheme(!document.documentElement.classList.contains('dark'));
+        });
+      });
+    </script>
+  </body>
+</html>

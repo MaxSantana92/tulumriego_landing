@@ -1,0 +1,88 @@
+---
+import type { Translations } from '../i18n/index';
+interface Props { t: Translations; }
+const { t } = Astro.props;
+
+const steps = [
+  { icon: 'sensors', color: 'primary', title: t.ecosystem.step1.title, desc: t.ecosystem.step1.desc },
+  { icon: 'memory',  color: 'gold',    title: t.ecosystem.step2.title, desc: t.ecosystem.step2.desc },
+  { icon: 'water_drop', color: 'primary', title: t.ecosystem.step3.title, desc: t.ecosystem.step3.desc },
+];
+---
+
+<!-- ── MISSION ────────────────────────────────────────── -->
+<section class="reveal" style="padding:6rem 0;position:relative;overflow:hidden;background:var(--color-surface-low);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);">
+  
+  <div aria-hidden="true" style="position:absolute;inset:0;opacity:0.07;pointer-events:none;">
+    <svg style="width:100%;height:100%;" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line x1="0" y1="20" x2="100" y2="80" stroke="currentColor" stroke-width="0.05" style="color:var(--color-primary);"/>
+      <line x1="0" y1="80" x2="100" y2="20" stroke="currentColor" stroke-width="0.05" style="color:var(--color-primary);"/>
+      <line x1="50" y1="0"  x2="50"  y2="100" stroke="currentColor" stroke-width="0.05" style="color:var(--color-primary);"/>
+    </svg>
+  </div>
+
+  <div style="max-width:56rem;margin:0 auto;padding:0 2rem;text-align:center;position:relative;z-index:10;">
+    <h2 class="font-headline reveal" style="font-size:clamp(1.75rem,5vw,3.5rem);font-weight:900;letter-spacing:-0.04em;text-transform:uppercase;font-style:italic;line-height:1.05;margin-bottom:3.5rem;color:var(--color-text);">
+      {t.mission.title1}
+      <span class="glow-text" style="color:var(--color-primary);"> {t.mission.title2}</span>
+    </h2>
+
+    <div class="reveal" style="position:relative;display:inline-block;padding:0 2rem;">
+      <span class="material-symbols-outlined" style="position:absolute;top:-2rem;left:0;font-size:3.5rem;color:var(--color-gold);opacity:0.18;">format_quote</span>
+      <p style="font-size:clamp(1rem,2.2vw,1.35rem);line-height:1.75;font-style:italic;color:var(--color-text-muted);padding:1rem 2rem;border-left:2px solid var(--color-border);border-right:2px solid var(--color-border);">
+        {t.mission.quote}
+      </p>
+      <span class="material-symbols-outlined" style="position:absolute;bottom:-2rem;right:0;font-size:3.5rem;color:var(--color-gold);opacity:0.18;rotate:180deg;">format_quote</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── ECOSYSTEM ──────────────────────────────────────── -->
+<section id="network" class="reveal" style="padding:6rem 0 8rem;position:relative;">
+  <div style="max-width:80rem;margin:0 auto;padding:0 2rem;">
+
+    <!-- Heading -->
+    <div class="reveal" style="text-align:center;margin-bottom:5rem;">
+      <h2 class="font-headline" style="font-size:clamp(1.75rem,4vw,3rem);font-weight:900;letter-spacing:-0.04em;text-transform:uppercase;margin-bottom:1rem;color:var(--color-text);">
+        Ecosystem <span class="glow-text" style="color:var(--color-primary);">Digital</span>
+      </h2>
+      <div style="width:6rem;height:1px;margin:0 auto;background:var(--color-border);"></div>
+    </div>
+
+    <div class="stagger-container" style="display:grid;grid-template-columns:repeat(3,1fr);gap:4rem;position:relative;">
+
+      <!-- Connector line (desktop) -->
+      <div class="eco-connector" style="display:none;position:absolute;top:3.5rem;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--color-primary),transparent);opacity:0.2;">
+        <div style="position:absolute;top:-5px;left:0;width:10px;height:10px;background:var(--color-primary);rotate:45deg;box-shadow:0 0 10px var(--color-primary-glow);"></div>
+        <div style="position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;background:var(--color-gold);rotate:45deg;box-shadow:var(--shadow-gold);"></div>
+        <div style="position:absolute;top:-5px;right:0;width:10px;height:10px;background:var(--color-primary);rotate:45deg;box-shadow:0 0 10px var(--color-primary-glow);"></div>
+      </div>
+
+      {steps.map(step => (
+        <div class="stagger-item eco-step" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <div class="eco-icon-box poly-cta" style={`width:7rem;height:7rem;background:var(--color-surface-high);border:2px solid var(--color-border);display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem;transition:border-color .3s,box-shadow .3s,transform .3s;`}
+            data-primary-color={`var(--color-${step.color==='gold'?'gold':'primary'})`}
+            data-primary-glow={step.color==='gold'?'var(--shadow-gold)':'0 0 30px var(--color-primary-glow)'}>
+            <span class="material-symbols-outlined" style={`font-size:2.75rem;color:var(--color-${step.color==='gold'?'gold':'primary'});`}>{step.icon}</span>
+          </div>
+          <h4 class="font-headline" style="font-size:1.25rem;font-weight:900;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.875rem;color:var(--color-text);">{step.title}</h4>
+          <p style="font-size:0.85rem;line-height:1.7;max-width:16rem;color:var(--color-text-muted);">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (min-width: 768px) {
+    .eco-connector { display: block !important; }
+  }
+  @media (max-width: 768px) {
+    .stagger-container { grid-template-columns: 1fr !important; }
+  }
+  .eco-step:hover .eco-icon-box {
+    transform: scale(1.1);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 30px var(--color-primary-glow);
+  }
+</style>

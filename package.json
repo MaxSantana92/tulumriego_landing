@@ -1,0 +1,19 @@
+{
+  "name": "tulum-riego-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Tulum Riego - Inteligencia Hídrica para el Futuro del Campo",
+  "scripts": {
+    "dev":     "astro dev",
+    "start":   "astro dev",
+    "build":   "astro build",
+    "preview": "astro preview",
+    "astro":   "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
