@@ -41,7 +41,7 @@ export const en = {
       intro: 'A major recognition awarded by the ',
       institution1: 'Provincial Government of San Juan',
       middle:
-        ', following a rigorous evaluation by industry professionals and experts from the prestigious ',
+        '; it is no surprise that our province is facing one of the most severe water crises in its history. Water scarcity is not just a statistic, it is a pain that affects our producers, our economy, and our future. Managing every drop is no longer an option, it is a vital obligation.',
       institution2: 'Faculty of Engineering of San Juan',
       outro:
         '. This award validates our commitment to technological excellence and water efficiency in the region.',
@@ -59,17 +59,17 @@ export const en = {
     title2: 'Direct Profitability.',
     card1: {
       title: 'Optimization',
-      desc: 'Real need calculation based on exact biometrics. Field sensors reading the water pulse of the crop with laser precision.',
+      desc: 'Toward Agronomic Precision. We implement a deterministic calculation engine designed to move from visual estimation to technical precision. We integrate real-time soil, crop, and climate data to characterize the water balance of each plot, considering the real heterogeneity of San Juan soils.',
       link: 'See Technology',
     },
     card2: {
       title: 'Sustainability',
-      desc: 'Responsible use of resources for future generations. We preserve the aquifer through state-of-the-art algorithmic management.',
+      desc: 'Water Intelligence and Resilience. We seek to protect water resources through algorithmic management that projects plant needs. Our goal is to drastically reduce deep percolation losses by adapting irrigation to regional physical constraints such as salinity and stoniness, ensuring long-term aquifer viability.',
       link: 'Impact Report',
     },
     card3: {
       title: 'Productivity',
-      desc: 'Maximizing yield per hectare and massive energy savings. Less unnecessary pumping, better certified harvests.',
+      desc: 'Operational Efficiency and Profitability. We work to turn water savings into direct economic benefits. We project a 30% optimization in water and pumping energy footprint, plus a potential yield increase of up to 15% in crops such as pistachio and olive, eliminating unnecessary irrigation through decisions backed by water science.',
       link: 'Success Cases',
     },
   },
@@ -78,7 +78,7 @@ export const en = {
     title1: 'Mission: Ensure sustainability based on',
     title2: 'real data.',
     quote:
-      "\"In arid zones, visual estimation is an operational risk. Moving from 'fixed routine' to 'digital precision' is the difference between waste and high-level efficiency.\"",
+      "\"In arid zones, visual estimation is an operational risk. Moving from 'fixed routine' to 'digital precision' is the difference between uncertainty and high-level sustainable efficient management.\"",
   },
   // Ecosystem
   ecosystem: {
@@ -86,10 +86,10 @@ export const en = {
     heading2: 'Digital',
     step1: {
       title: '1. Data Capture',
-      desc: 'Low-latency nodes capturing soil and atmosphere biometrics in real time.',
+      desc: 'We gather real-time climate, soil, and crop data to characterize the water balance of each plot, considering the real heterogeneity of San Juan soils.',
     },
     step2: {
-      title: '2. AI Processing',
+      title: '2. Deterministic Calculation Engine',
       desc: 'Algorithmic engines processing complex variables for instant water decisions.',
     },
     step3: {
@@ -99,23 +99,33 @@ export const en = {
   },
   // Form
   form: {
-    title1: 'Join the water',
-    title2: 'evolution.',
+    title1: 'Join the pilot',
+    title2: 'validation trials.',
     subtitle:
-      'Request a detailed technical feasibility report for your production unit. Integrate your farm into the Tulum Riego digital ecosystem.',
+      "Apply to join Tulum Riego's field validation program. We will assess your production unit with real data and specialized technical follow-up.",
     label1: 'Crop Location',
     placeholder1: 'E.G.: SARMIENTO, SAN JUAN',
     label2: 'Total Hectares',
     placeholder2: '00',
-    submit: 'START DIGITAL DIAGNOSIS',
-    impact: 'Certified Average Saving Tulum Valley',
-    impactFactor: 'Impact Factor',
+    label3: 'Crop Type',
+    placeholder3: 'E.G.: OLIVE, PISTACHIO, VINE',
+    label4: 'Email',
+    placeholder4: 'E.G.: name@company.com',
+    label5: 'Contact Phone',
+    placeholder5: 'E.G.: +54 9 264 000 0000',
+    submit: 'APPLY FOR PILOT TRIAL',
+    impactCard2Title: 'Projected Optimization',
+    impactCard2Value: '30%',
+    impactCard2Desc: 'Water and pumping energy savings',
+    impactCard3Title: 'Potential Increase',
+    impactCard3Value: '15%',
+    impactCard3Desc: 'Yield improvement in strategic crops',
   },
   // Footer
   footer: {
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
     lab: 'Innovation Lab',
-    copy: '© 2024 DIGITAL AQUIFER. ALL RIGHTS RESERVED.',
+    copy: '© 2026 POWERED BY AGRITECH SOLUCIONES. ALL RIGHTS RESERVED.',
   },
 } as const

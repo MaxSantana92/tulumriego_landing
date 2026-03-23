@@ -41,7 +41,7 @@ export const es = {
       intro: 'Este es un gran reconocimiento otorgado por el ',
       institution1: 'Gobierno Provincial de San Juan',
       middle:
-        ', tras una rigurosa evaluación realizada por profesionales del rubro y expertos de la prestigiosa ',
+        '; no es novedad que nuestra provincia atraviesa una de las crisis hídricas más severas de su historia. La falta de agua no es solo un dato estadístico, es un dolor que afecta a nuestros productores, a nuestra economía y a nuestro futuro. Gestionar cada gota ya no es una opción, es una obligación vital.',
       institution2: 'Facultad de Ingeniería de San Juan',
       outro:
         '. Este galardón valida nuestro compromiso con la excelencia tecnológica y la eficiencia hídrica en la región.',
@@ -59,17 +59,17 @@ export const es = {
     title2: 'Rentabilidad Directa.',
     card1: {
       title: 'Optimización',
-      desc: 'Cálculo de necesidad real basado en biometría exacta. Sensores de campo que leen el pulso hídrico del cultivo con precisión láser.',
+      desc: 'Hacia la Precisión Agronómica Implementamos un motor de cálculo determinístico, diseñado para transitar de la estimación visual a la precisión técnica. Integramos datos de suelo, cultivo y climáticos en tiempo real para caracterizar el balance hídrico de cada lote, considerando la heterogeneidad real de los suelos de San Juan',
       link: 'Ver Tecnología',
     },
     card2: {
       title: 'Sostenibilidad',
-      desc: 'Uso responsable del recurso para futuras generaciones. Preservamos el acuífero mediante gestión algorítmica de última generación.',
+      desc: 'Inteligencia Hídrica y Resiliencia Buscamos proteger el recurso hídrico mediante una gestión algorítmica que proyecta las necesidades de la planta. Nuestro objetivo es reducir drásticamente las pérdidas por percolación profunda, adaptando el riego a las limitaciones físicas de la región como la salinidad y la pedregosidad para asegurar la viabilidad del acuífero a largo plazo',
       link: 'Reporte Impacto',
     },
     card3: {
       title: 'Productividad',
-      desc: 'Maximización del rendimiento por hectárea y ahorro masivo de energía. Menos bombeo innecesario, mejores cosechas certificadas.',
+      desc: 'Eficiencia Operativa y Rentabilidad Trabajamos para transformar el ahorro de agua en beneficios económicos directos. Proyectamos una optimización del 30% de ahorro en huella hídrica y energética por bombeo, además de un incremento potencial de hasta el 15% en el rendimiento de cultivos como el pistacho y el olivo, eliminando riegos innecesarios mediante decisiones respaldadas por la ciencia hídrica',
       link: 'Casos Éxito',
     },
   },
@@ -78,7 +78,7 @@ export const es = {
     title1: 'Misión: Garantizar sostenibilidad basándose en',
     title2: 'datos reales.',
     quote:
-      "\"En zonas áridas, la estimación visual es un riesgo operativo. Pasar de la 'rutina fija' a la 'precisión digital' es la diferencia entre el desperdicio y la eficiencia de alto nivel.\"",
+      "\"En zonas áridas, la estimación visual es un riesgo operativo. Pasar de la 'rutina fija' a la 'precisión digital' es la diferencia entre incertidumbre y la gestión eficiente sostenible de alto nivel.\"",
   },
   // Ecosystem
   ecosystem: {
@@ -86,37 +86,47 @@ export const es = {
     heading2: 'Digital',
     step1: {
       title: '1. Captura de Datos',
-      desc: 'Nodos de baja latencia capturando biometría de suelo y atmósfera en tiempo real.',
+      desc: 'Obtenemos datos de clima en tiempo real, suelo y cultivos para caracterizar el balance hídrico de cada lote, considerando la heterogeneidad real de los suelos de San Juan',
     },
     step2: {
-      title: '2. Procesamiento IA',
+      title: '2. Motor de Cálculo Determinístico',
       desc: 'Motores algorítmicos procesando variables complejas para decisiones hídricas instantáneas.',
     },
     step3: {
       title: '3. Acción Directa',
-      desc: 'Ejecución de riego milimétrico bajo demanda. Cero desperdicio, máximo rendimiento.',
+      desc: 'Ejecución de riego milimétrico bajo demanda. Cero incertidumbre, máximo rendimiento.',
     },
   },
   // Form
   form: {
-    title1: 'Únete a la evolución',
-    title2: 'hídrica.',
+    title1: 'Participa en las pruebas',
+    title2: 'piloto de validación.',
     subtitle:
-      'Solicite un informe de viabilidad técnica detallado para su unidad productiva. Integre su campo al ecosistema digital Tulum Riego.',
+      'Postúlate para integrar el programa de validación en campo de Tulum Riego. Evaluaremos tu unidad productiva con datos reales y seguimiento técnico especializado.',
     label1: 'Ubicación del Cultivo',
     placeholder1: 'EJ: SARMIENTO, SAN JUAN',
     label2: 'Hectáreas Totales',
     placeholder2: '00',
-    submit: 'INICIAR DIAGNÓSTICO DIGITAL',
-    impact: 'Ahorro Promedio Certificado Valle Tulum',
-    impactFactor: 'Impact Factor',
+    label3: 'Cultivo',
+    placeholder3: 'EJ: OLIVO, PISTACHO, VID',
+    label4: 'Email',
+    placeholder4: 'EJ: nombre@empresa.com',
+    label5: 'Teléfono de Contacto',
+    placeholder5: 'EJ: +54 9 264 000 0000',
+    submit: 'POSTULAR A PRUEBA PILOTO',
+    impactCard2Title: 'Optimización Proyectada',
+    impactCard2Value: '30%',
+    impactCard2Desc: 'Ahorro hídrico y energético por bombeo',
+    impactCard3Title: 'Incremento Potencial',
+    impactCard3Value: '15%',
+    impactCard3Desc: 'Mejora de rendimiento en cultivos estratégicos',
   },
   // Footer
   footer: {
     privacy: 'Política de Privacidad',
     terms: 'Términos de Servicio',
     lab: 'Innovation Lab',
-    copy: '© 2024 DIGITAL AQUIFER. TODOS LOS DERECHOS RESERVADOS.',
+    copy: '© 2026 POWERED BY AGRITECH SOLUCIONES. TODOS LOS DERECHOS RESERVADOS.',
   },
 } as const
 
