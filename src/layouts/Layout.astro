@@ -23,17 +23,22 @@ const {
 } = Astro.props;
 const currentLang: Locale = lang ?? getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
+const basePrefix = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 const defaultDescription =
   currentLang === 'en'
     ? 'Tulum Riego - Water intelligence. Precision irrigation powered by AI and real-time sensor data.'
     : 'Tulum Riego - Inteligencia hidrica. Riego de precision impulsado por IA y datos de sensores en tiempo real.';
 const pageDescription = description ?? defaultDescription;
 const siteOrigin = Astro.site ?? new URL(Astro.url.origin);
-const defaultCanonicalPath = currentLang === 'en' ? '/en/' : '/';
-const canonicalUrl = new URL(canonicalPath ?? defaultCanonicalPath, siteOrigin).toString();
-const esUrl = new URL('/', siteOrigin).toString();
-const enUrl = new URL('/en/', siteOrigin).toString();
-const ogImageUrl = new URL(ogImagePath, siteOrigin).toString();
+const defaultCanonicalPath = currentLang === 'en' ? withBase('/en/') : withBase('/');
+const resolvedCanonicalPath = canonicalPath ? withBase(canonicalPath) : defaultCanonicalPath;
+const canonicalUrl = new URL(resolvedCanonicalPath, siteOrigin).toString();
+const esUrl = new URL(withBase('/'), siteOrigin).toString();
+const enUrl = new URL(withBase('/en/'), siteOrigin).toString();
+const ogImageUrl = new URL(withBase(ogImagePath), siteOrigin).toString();
 const ogLocale = currentLang === 'en' ? 'en_US' : 'es_ES';
 const altOgLocale = currentLang === 'en' ? 'es_ES' : 'en_US';
 ---
@@ -44,9 +49,9 @@ const altOgLocale = currentLang === 'en' ? 'es_ES' : 'en_US';
     <meta charset="UTF-8" />
     <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <link rel="shortcut icon" href={withBase('/favicon.svg')} />
+    <link rel="apple-touch-icon" href={withBase('/favicon.svg')} />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
@@ -67,8 +72,8 @@ const altOgLocale = currentLang === 'en' ? 'es_ES' : 'en_US';
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
     <title>{title}</title>
-    <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={withBase('/fonts/space-grotesk-latin.woff2')} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={withBase('/fonts/plus-jakarta-sans-latin.woff2')} as="font" type="font/woff2" crossorigin />
 
     <!-- Anti-FOUC theme script — runs synchronously before paint -->
     <script is:inline>

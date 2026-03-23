@@ -3,6 +3,10 @@ import type { Translations } from '../i18n/index';
 import AppIcon from './AppIcon.astro';
 interface Props { t: Translations; }
 const { t } = Astro.props;
+const basePrefix = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 ---
 
 <section id="home" style="position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;">
@@ -57,7 +61,7 @@ const { t } = Astro.props;
       <!-- Main SVG -->
       <div style="position:relative;z-index:20;" class="hero-visual-wrap">
         <img
-          src="/logo_tulumriego_sin_fondo.svg"
+          src={withBase('/logo_tulumriego_sin_fondo.svg')}
           width="380"
           height="460"
           alt={t.nav.logoAlt}

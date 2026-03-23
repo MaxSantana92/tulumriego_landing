@@ -8,8 +8,13 @@ interface Props {
   t: Translations;
 }
 const { lang, t } = Astro.props;
+const basePrefix = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 const otherLang: Locale = lang === 'es' ? 'en' : 'es';
-const otherLangPath = getLocalePath(otherLang);
+const currentLangPath = withBase(getLocalePath(lang));
+const otherLangPath = withBase(getLocalePath(otherLang));
 
 const navLinks = [
   { label: t.nav.home,       href: '#home' },
@@ -23,10 +28,10 @@ const navLinks = [
   <div style="display:flex;justify-content:space-between;align-items:center;max-width:1440px;margin:0 auto;">
 
     <!-- Logo -->
-    <a href={getLocalePath(lang)} style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+    <a href={currentLangPath} style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
       <img
         class="logo-glow"
-        src="/logo_tulumriego_sin_fondo.svg"
+        src={withBase('/logo_tulumriego_sin_fondo.svg')}
         width="62"
         height="62"
         alt={t.nav.logoAlt}

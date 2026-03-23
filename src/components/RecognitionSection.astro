@@ -3,6 +3,10 @@ import type { Translations } from '../i18n/index';
 import AppIcon from './AppIcon.astro';
 interface Props { t: Translations; }
 const { t } = Astro.props;
+const basePrefix = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 ---
 
 <section class="reveal" style="padding:6rem 0;position:relative;overflow:hidden;background:var(--color-bg-alt);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);">
@@ -30,7 +34,7 @@ const { t } = Astro.props;
           <div style="position:absolute;inset:0;border-radius:50%;background:var(--color-gold);opacity:0.12;filter:blur(80px);transform:scale(0.8);pointer-events:none;"></div>
 
           <img
-            src="/LOGO_FINALISTA_COLOR_SVG.svg"
+            src={withBase('/LOGO_FINALISTA_COLOR_SVG.svg')}
             width="200"
             height="220"
             alt={t.recognition.altImage}

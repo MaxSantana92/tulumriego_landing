@@ -6,6 +6,10 @@ interface Props {
   t: Translations;
 }
 const { t } = Astro.props;
+const basePrefix = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 
 const links = [
   { label: t.footer.privacy, href: '#' },
@@ -19,7 +23,7 @@ const links = [
 
     <div style="display:flex;align-items:center;gap:0.75rem;">
       <img
-        src="/logo_tulumriego_sin_fondo.svg"
+        src={withBase('/logo_tulumriego_sin_fondo.svg')}
         width="32"
         height="32"
         alt={t.nav.logoAlt}
