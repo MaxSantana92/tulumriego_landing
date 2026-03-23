@@ -56,7 +56,14 @@ const navLinks = [
       </a>
 
       <!-- Theme toggle -->
-      <button data-theme-toggle class="theme-toggle" aria-label={t.nav.toggleThemeAria} title={t.nav.toggleThemeTitle}></button>
+      <button data-theme-toggle class="theme-toggle" aria-label={t.nav.toggleThemeAria} title={t.nav.toggleThemeTitle} aria-pressed="false">
+        <span class="theme-icon theme-icon-light" aria-hidden="true">
+          <AppIcon name="light_mode" size="0.85rem" />
+        </span>
+        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+          <AppIcon name="dark_mode" size="0.85rem" />
+        </span>
+      </button>
 
       <!-- CTA (desktop) -->
       <button class="nav-cta-desktop poly-cta font-headline" style="display:none;background:var(--color-primary);color:var(--color-midnight);font-size:0.65rem;font-weight:900;letter-spacing:0.2em;text-transform:uppercase;padding:0.65rem 1.75rem;border:none;cursor:pointer;transition:filter .2s,transform .2s;box-shadow:0 0 20px var(--color-primary-glow);">
@@ -100,4 +107,32 @@ const navLinks = [
   if (btn && menu) {
     btn.addEventListener('click', () => menu.classList.toggle('open'));
   }
+
+  // Anchor navigation with fixed-header offset.
+  const nav = document.querySelector('nav');
+  const navHeight = nav ? nav.getBoundingClientRect().height : 80;
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      event.preventDefault();
+
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+      window.scrollTo({
+        top: Math.max(offsetTop, 0),
+        behavior: 'smooth',
+      });
+
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+      }
+
+      window.history.replaceState(null, '', href);
+    });
+  });
 </script>

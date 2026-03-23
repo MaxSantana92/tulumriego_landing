@@ -111,10 +111,21 @@ const altOgLocale = currentLang === 'en' ? 'es_ES' : 'en_US';
 
     <!-- Theme toggle -->
     <script>
+      function syncThemeToggleState() {
+        const isDark = document.documentElement.classList.contains('dark');
+        document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+          btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        });
+      }
+
       function applyTheme(dark: boolean) {
         document.documentElement.classList.toggle('dark', dark);
         try { localStorage.setItem('tulum-theme', dark ? 'dark' : 'light'); } catch(e) {}
+        syncThemeToggleState();
       }
+
+      syncThemeToggleState();
+
       document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
         btn.addEventListener('click', () => {
           applyTheme(!document.documentElement.classList.contains('dark'));
