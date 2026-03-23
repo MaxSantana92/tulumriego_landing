@@ -67,7 +67,7 @@ Mensaje sugerido:
 `perf(icons): elimina carga remota de material symbols y localiza iconos`
 
 ### 4) Documentacion de deuda tecnica
-- `src/docs/technical_debt/DEUDA_TECNICA.md`
+- `docs/DEUDA_TECNICA.md`
 - `docs/COMMITS_ESTRUCTURADOS.md`
 
 Mensaje sugerido:
@@ -124,3 +124,34 @@ New-StructuredCommit `
 - `git diff --cached --name-only` solo muestra archivos del grupo.
 - `npm run build` compila correctamente.
 - El mensaje explica el resultado, no solo la accion.
+
+## Flujo recomendado con Biome (Astro)
+
+### Alcance actual de Biome en este proyecto
+- Biome esta configurado para lint/format de archivos compatibles.
+- Los archivos `.astro` quedan fuera de Biome para evitar falsos positivos.
+- Configuracion base en `biome.json`.
+
+### Uso diario (local)
+Ejecutar antes de commitear:
+
+```bash
+npm run lint:biome
+npm run build
+```
+
+Opcional para aplicar formato:
+
+```bash
+npm run format:biome
+```
+
+### Uso en CI (recomendado)
+- Paso 1: `npm ci`
+- Paso 2: `npm run lint:biome`
+- Paso 3: `npm run build`
+
+### Regla operativa
+- Si falla Biome, corregir primero.
+- Si Biome pasa y build falla, priorizar fix de build.
+- No mezclar en un mismo commit: fixes de Biome + features no relacionadas.

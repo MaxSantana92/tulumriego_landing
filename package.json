@@ -8,7 +8,10 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:biome": "biome lint .",
+    "check:biome": "biome check .",
+    "format:biome": "biome format --write ."
   },
   "dependencies": {
     "@iconify-json/material-symbols": "^1.2.63",
@@ -16,6 +19,7 @@
     "astro-icon": "^1.1.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.8",
     "typescript": "^5.5.0"
   }
 }
