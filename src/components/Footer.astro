@@ -34,13 +34,29 @@ const links = [
       </span>
     </div>
 
-    <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;">
+    <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;align-items:center;">
       {links.map(l => (
         <a href={l.href} class="footer-link font-headline"
           style="font-size:0.65rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);text-decoration:none;transition:color .2s;">
           {l.label}
         </a>
       ))}
+      <a
+        href="https://agritech.ar/es"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="agritech-link font-headline"
+        style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);text-decoration:none;transition:color .2s;"
+      >
+        <img
+          src={withBase('/logo_agritech.png')}
+          width="24"
+          height="24"
+          alt="Agritech Soluciones"
+          style="width:1.25rem;height:1.25rem;object-fit:contain;"
+        />
+        <span>Powered By Agritech Soluciones</span>
+      </a>
     </div>
 
     <p style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);opacity:0.6;">
@@ -51,4 +67,5 @@ const links = [
 
 <style>
   .footer-link:hover { color: var(--color-gold) !important; }
+  .agritech-link:hover { color: var(--color-primary) !important; }
 </style>
