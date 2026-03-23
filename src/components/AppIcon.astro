@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  name: string;
+  size?: string;
+  class?: string;
+  style?: string;
+  title?: string;
+}
+
+const {
+  name,
+  size = '1em',
+  class: className,
+  style = '',
+  title,
+} = Astro.props;
+
+const normalizedName = name.replaceAll('_', '-');
+const iconName = `material-symbols:${normalizedName}`;
+---
+
+<Icon
+  name={iconName}
+  width={size}
+  height={size}
+  class={className}
+  style={`display:inline-block;vertical-align:middle;${style}`}
+  title={title}
+  aria-hidden={title ? 'false' : 'true'}
+/>

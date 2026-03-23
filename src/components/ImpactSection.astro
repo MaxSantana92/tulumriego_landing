@@ -1,5 +1,6 @@
 ---
 import type { Translations } from '../i18n/index';
+import AppIcon from './AppIcon.astro';
 interface Props { t: Translations; }
 const { t } = Astro.props;
 
@@ -35,7 +36,7 @@ const cards = [
           <!-- Icon block -->
           <div style="margin-bottom:2.5rem;position:relative;">
             <div class="poly-cta" style={`width:4.5rem;height:4.5rem;background:var(--color-${card.color==='gold'?'gold':'primary'});opacity:0.1;border:1px solid var(--color-${card.color==='gold'?'gold':'primary'});display:inline-flex;align-items:center;justify-content:center;`}></div>
-            <span class="material-symbols-outlined" style={`position:absolute;left:0.6rem;top:0.4rem;font-size:2.75rem;color:var(--color-${card.color==='gold'?'gold':'primary'});`}>{card.icon}</span>
+            <AppIcon name={card.icon} size="2.75rem" style={`position:absolute;left:0.6rem;top:0.4rem;color:var(--color-${card.color==='gold'?'gold':'primary'});`} />
           </div>
 
           <h3 class="font-headline" style="font-size:1.6rem;font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:1.25rem;color:var(--color-text);">{card.title}</h3>
@@ -44,7 +45,7 @@ const cards = [
 
           <div class="card-link font-headline" style={`display:flex;align-items:center;gap:0.5rem;font-size:0.65rem;font-weight:900;letter-spacing:0.2em;text-transform:uppercase;transition:transform .25s;color:var(--color-${card.color==='gold'?'gold':'primary'});`}>
             <span>{card.link}</span>
-            <span class="material-symbols-outlined" style="font-size:1rem;">chevron_right</span>
+            <AppIcon name="chevron_right" size="1rem" />
           </div>
         </div>
       ))}

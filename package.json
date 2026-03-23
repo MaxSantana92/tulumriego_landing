@@ -4,14 +4,16 @@
   "version": "1.0.0",
   "description": "Tulum Riego - Inteligencia Hídrica para el Futuro del Campo",
   "scripts": {
-    "dev":     "astro dev",
-    "start":   "astro dev",
-    "build":   "astro build",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro":   "astro"
+    "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.0"
+    "@iconify-json/material-symbols": "^1.2.63",
+    "astro": "^4.16.0",
+    "astro-icon": "^1.1.5"
   },
   "devDependencies": {
     "typescript": "^5.5.0"

@@ -1,5 +1,6 @@
 ---
 import type { Translations } from '../i18n/index';
+import AppIcon from './AppIcon.astro';
 interface Props { t: Translations; }
 const { t } = Astro.props;
 
@@ -28,11 +29,11 @@ const steps = [
     </h2>
 
     <div class="reveal" style="position:relative;display:inline-block;padding:0 2rem;">
-      <span class="material-symbols-outlined" style="position:absolute;top:-2rem;left:0;font-size:3.5rem;color:var(--color-gold);opacity:0.18;">format_quote</span>
+      <AppIcon name="format_quote" size="3.5rem" style="position:absolute;top:-2rem;left:0;color:var(--color-gold);opacity:0.18;" />
       <p style="font-size:clamp(1rem,2.2vw,1.35rem);line-height:1.75;font-style:italic;color:var(--color-text-muted);padding:1rem 2rem;border-left:2px solid var(--color-border);border-right:2px solid var(--color-border);">
         {t.mission.quote}
       </p>
-      <span class="material-symbols-outlined" style="position:absolute;bottom:-2rem;right:0;font-size:3.5rem;color:var(--color-gold);opacity:0.18;rotate:180deg;">format_quote</span>
+      <AppIcon name="format_quote" size="3.5rem" style="position:absolute;bottom:-2rem;right:0;color:var(--color-gold);opacity:0.18;rotate:180deg;" />
     </div>
   </div>
 </section>
@@ -63,7 +64,7 @@ const steps = [
           <div class="eco-icon-box poly-cta" style={`width:7rem;height:7rem;background:var(--color-surface-high);border:2px solid var(--color-border);display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem;transition:border-color .3s,box-shadow .3s,transform .3s;`}
             data-primary-color={`var(--color-${step.color==='gold'?'gold':'primary'})`}
             data-primary-glow={step.color==='gold'?'var(--shadow-gold)':'0 0 30px var(--color-primary-glow)'}>
-            <span class="material-symbols-outlined" style={`font-size:2.75rem;color:var(--color-${step.color==='gold'?'gold':'primary'});`}>{step.icon}</span>
+            <AppIcon name={step.icon} size="2.75rem" style={`color:var(--color-${step.color==='gold'?'gold':'primary'});`} />
           </div>
           <h4 class="font-headline" style="font-size:1.25rem;font-weight:900;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.875rem;color:var(--color-text);">{step.title}</h4>
           <p style="font-size:0.85rem;line-height:1.7;max-width:16rem;color:var(--color-text-muted);">{step.desc}</p>
