@@ -7,6 +7,7 @@ export const en = {
     contact: 'Contact',
     getStarted: 'GET STARTED',
     brand: 'TULUM RIEGO',
+    logoAlt: 'Tulum Riego logo',
     changeLanguage: 'Change language',
     toggleThemeAria: 'Toggle dark/light mode',
     toggleThemeTitle: 'Toggle theme',
@@ -16,11 +17,11 @@ export const en = {
   },
   // Hero
   hero: {
-    badge: 'Innovation Excellence 2024',
+    badge: 'Innovation Service 2025',
     title1: 'Water Intelligence for the',
     title2: 'Future of Farming.',
     subtitle:
-      'Precision irrigation based on real plant needs. We transform arid-zone agriculture through digital technology and algorithmic geometric precision management.',
+      'We drive water management and climate resilience in arid zones. We transform agriculture through digital technology and algorithmic geometric precision management.',
     cta1: 'REQUEST AUDIT',
     cta2: 'DISCOVER EJE TULUM',
     visualLabels: {
@@ -39,11 +40,14 @@ export const en = {
     descriptionParts: {
       intro: 'A major recognition awarded by the ',
       institution1: 'Provincial Government of San Juan',
-      middle: ', following a rigorous evaluation by industry professionals and experts from the prestigious ',
+      middle:
+        ', following a rigorous evaluation by industry professionals and experts from the prestigious ',
       institution2: 'Faculty of Engineering of San Juan',
       outro:
         '. This award validates our commitment to technological excellence and water efficiency in the region.',
     },
+    juryDetails:
+      'Project evaluation was conducted by a specialized jury made up of representatives from universities, the Union Industrial de San Juan, and the Knowledge Economy Chamber (Casetic). The experts reviewed each proposal with rigor, considering originality, validation, technical-scientific foundation, potential impact, and alignment with the strategic priorities of provincial development.',
     medalLabel: 'FIRST PLACE',
     medalYear: 'SAN JUAN 2025',
     ecosystem: 'Tulum Digital Ecosystem',
@@ -74,7 +78,7 @@ export const en = {
     title1: 'Mission: Ensure sustainability based on',
     title2: 'real data.',
     quote:
-      '"In arid zones, visual estimation is an operational risk. Moving from \'fixed routine\' to \'digital precision\' is the difference between waste and high-level efficiency."',
+      "\"In arid zones, visual estimation is an operational risk. Moving from 'fixed routine' to 'digital precision' is the difference between waste and high-level efficiency.\"",
   },
   // Ecosystem
   ecosystem: {
@@ -114,4 +118,4 @@ export const en = {
     lab: 'Innovation Lab',
     copy: '© 2024 DIGITAL AQUIFER. ALL RIGHTS RESERVED.',
   },
-} as const;
+} as const

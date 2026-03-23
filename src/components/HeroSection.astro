@@ -56,61 +56,16 @@ const { t } = Astro.props;
 
       <!-- Main SVG -->
       <div style="position:relative;z-index:20;" class="hero-visual-wrap">
-        <svg viewBox="0 0 320 380" fill="none" xmlns="http://www.w3.org/2000/svg"
-          style="width:min(20rem,85vw);filter:drop-shadow(0 0 50px var(--color-primary-glow));animation:float-y 5s ease-in-out infinite;">
-
-          <!-- Outer hex -->
-          <polygon points="160,10 305,92 305,278 160,370 15,278 15,92"
-            stroke="currentColor" stroke-width="1" style="color:var(--color-primary);" opacity="0.25" fill="none"/>
-
-          <!-- Inner hex -->
-          <polygon points="160,50 268,112 268,258 160,320 52,258 52,112"
-            stroke="currentColor" stroke-width="0.7" style="color:var(--color-primary);" opacity="0.15" fill="none"/>
-
-          <!-- Water drop body -->
-          <path d="M160 72 C127 116 98 152 98 190 C98 230 126 260 160 260 C194 260 222 230 222 190 C222 152 193 116 160 72Z"
-            stroke="currentColor" stroke-width="2" style="color:var(--color-primary);"
-            fill="currentColor" opacity="0.1"/>
-          <path d="M160 72 C127 116 98 152 98 190 C98 230 126 260 160 260 C194 260 222 230 222 190 C222 152 193 116 160 72Z"
-            stroke="currentColor" stroke-width="1.5" style="color:var(--color-primary);" fill="none"/>
-
-          <!-- Highlight -->
-          <path d="M143 122 C133 142 126 162 126 180 C126 196 134 210 145 216"
-            stroke="white" stroke-width="1.5" opacity="0.22" stroke-linecap="round"/>
-
-          <!-- Circuit stems -->
-          <line x1="160" y1="260" x2="160" y2="320" stroke="currentColor" stroke-width="1" style="color:var(--color-primary);" opacity="0.35" stroke-dasharray="4 4"/>
-          <line x1="98"  y1="190" x2="52"  y2="190" stroke="currentColor" stroke-width="1" style="color:var(--color-primary);" opacity="0.35" stroke-dasharray="4 4"/>
-          <line x1="222" y1="190" x2="268" y2="190" stroke="currentColor" stroke-width="1" style="color:var(--color-primary);" opacity="0.35" stroke-dasharray="4 4"/>
-
-          <!-- Nodes -->
-          <circle cx="52"  cy="190" r="5" fill="currentColor" style="color:var(--color-primary);" opacity="0.9"/>
-          <circle cx="268" cy="190" r="5" fill="currentColor" style="color:var(--color-primary);" opacity="0.9"/>
-          <circle cx="160" cy="320" r="5" fill="currentColor" style="color:var(--color-gold);" opacity="0.9"/>
-
-          <!-- Labels -->
-          <text x="20"  y="188" font-size="8" fill="currentColor" style="color:var(--color-primary);" opacity="0.7" font-family="Space Grotesk" font-weight="700">{t.hero.visualLabels.water}</text>
-          <text x="278" y="188" font-size="8" fill="currentColor" style="color:var(--color-primary);" opacity="0.7" font-family="Space Grotesk" font-weight="700">{t.hero.visualLabels.nutrients}</text>
-          <text x="140" y="336" font-size="8" fill="currentColor" style="color:var(--color-gold);"   opacity="0.8" font-family="Space Grotesk" font-weight="700">{t.hero.visualLabels.ai}</text>
-
-          <!-- Center sensor icon area -->
-          <circle cx="160" cy="190" r="28" stroke="currentColor" stroke-width="1" style="color:var(--color-primary);" opacity="0.3" fill="none"/>
-          <circle cx="160" cy="190" r="18" fill="currentColor" style="color:var(--color-primary);" opacity="0.12"/>
-          <!-- Sensor cross -->
-          <line x1="160" y1="174" x2="160" y2="206" stroke="currentColor" stroke-width="1.5" style="color:var(--color-primary);" opacity="0.7"/>
-          <line x1="144" y1="190" x2="176" y2="190" stroke="currentColor" stroke-width="1.5" style="color:var(--color-primary);" opacity="0.7"/>
-          <circle cx="160" cy="190" r="4" fill="currentColor" style="color:var(--color-primary);" opacity="0.9"/>
-
-          <!-- Data ticks around drop -->
-          {[0,1,2,3,4,5,6,7].map((i: number) => {
-            const a = (i * 45 - 90) * Math.PI / 180;
-            const x1 = 160 + 34 * Math.cos(a);
-            const y1 = 190 + 34 * Math.sin(a);
-            const x2 = 160 + 40 * Math.cos(a);
-            const y2 = 190 + 40 * Math.sin(a);
-            return <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" stroke-width="1" style="color:var(--color-primary);" opacity="0.4"/>;
-          })}
-        </svg>
+        <img
+          src="/logo_tulumriego_sin_fondo.svg"
+          width="380"
+          height="460"
+          alt={t.nav.logoAlt}
+          fetchpriority="high"
+          decoding="async"
+          class="hero-main-logo"
+          style="width:min(19rem,82vw);height:auto;filter:drop-shadow(0 0 50px var(--color-primary-glow));animation:float-y 5s ease-in-out infinite;"
+        />
       </div>
 
       <!-- Corner accents -->
@@ -123,6 +78,6 @@ const { t } = Astro.props;
 </section>
 
 <style>
-  .hero-visual-wrap:hover svg { filter: drop-shadow(0 0 70px var(--color-primary-glow)) !important; }
+  .hero-visual-wrap:hover .hero-main-logo { filter: drop-shadow(0 0 70px var(--color-primary-glow)) !important; }
   button:hover { filter: brightness(1.12); transform: scale(1.03); }
 </style>

@@ -7,6 +7,7 @@ export const es = {
     contact: 'Contacto',
     getStarted: 'COMENZAR',
     brand: 'TULUM RIEGO',
+    logoAlt: 'Logo de Tulum Riego',
     changeLanguage: 'Cambiar idioma',
     toggleThemeAria: 'Alternar modo oscuro/claro',
     toggleThemeTitle: 'Alternar tema',
@@ -16,13 +17,13 @@ export const es = {
   },
   // Hero
   hero: {
-    badge: 'Innovación de Excelencia 2024',
+    badge: 'Servicio Innovador 2025',
     title1: 'Inteligencia Hídrica para el',
     title2: 'Futuro del Campo.',
     subtitle:
-      'Riego exacto basado en la necesidad real de la planta. Transformamos la agricultura de zonas áridas mediante tecnología digital y gestión algorítmica de precisión geométrica.',
-    cta1: 'SOLICITAR AUDITORÍA',
-    cta2: 'CONOCER EL EJE TULUM',
+      'Impulsamos la gestión del agua y la resiliencia climática en zonas áridas. Transformamos la agricultura mediante tecnología digital y gestión algorítmica de precisión geométrica.',
+    cta1: 'SOLICITAR INFORMACIÓN',
+    cta2: 'CONOCER EL EJE TULUM RIEGO',
     visualLabels: {
       water: 'H₂O',
       nutrients: 'NPK',
@@ -39,11 +40,14 @@ export const es = {
     descriptionParts: {
       intro: 'Este es un gran reconocimiento otorgado por el ',
       institution1: 'Gobierno Provincial de San Juan',
-      middle: ', tras una rigurosa evaluación realizada por profesionales del rubro y expertos de la prestigiosa ',
+      middle:
+        ', tras una rigurosa evaluación realizada por profesionales del rubro y expertos de la prestigiosa ',
       institution2: 'Facultad de Ingeniería de San Juan',
       outro:
         '. Este galardón valida nuestro compromiso con la excelencia tecnológica y la eficiencia hídrica en la región.',
     },
+    juryDetails:
+      'Para la evaluación de los proyectos, se conformó un jurado especializado integrado por representantes de universidades, la Unión Industrial de San Juan y la Cámara de la Economía del Conocimiento (Casetic). Los expertos analizaron cada propuesta con rigurosidad, considerando su originalidad, validación, sustento técnico-científico, impacto potencial y alineación con los ejes estratégicos del desarrollo provincial.',
     medalLabel: 'PRIMER PUESTO',
     medalYear: 'SAN JUAN 2025',
     ecosystem: 'Ecosistema Tulum Digital',
@@ -74,7 +78,7 @@ export const es = {
     title1: 'Misión: Garantizar sostenibilidad basándose en',
     title2: 'datos reales.',
     quote:
-      '"En zonas áridas, la estimación visual es un riesgo operativo. Pasar de la \'rutina fija\' a la \'precisión digital\' es la diferencia entre el desperdicio y la eficiencia de alto nivel."',
+      "\"En zonas áridas, la estimación visual es un riesgo operativo. Pasar de la 'rutina fija' a la 'precisión digital' es la diferencia entre el desperdicio y la eficiencia de alto nivel.\"",
   },
   // Ecosystem
   ecosystem: {
@@ -114,6 +118,6 @@ export const es = {
     lab: 'Innovation Lab',
     copy: '© 2024 DIGITAL AQUIFER. TODOS LOS DERECHOS RESERVADOS.',
   },
-} as const;
+} as const
 
-export type TranslationKey = typeof es;
+export type TranslationKey = typeof es

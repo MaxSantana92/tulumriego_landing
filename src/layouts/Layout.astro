@@ -18,7 +18,7 @@ const {
   description,
   lang,
   canonicalPath,
-  ogImagePath = '/favicon.svg',
+  ogImagePath = '/logo_tulumriego_sin_fondo.svg',
   robots = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
 } = Astro.props;
 const currentLang: Locale = lang ?? getLangFromUrl(Astro.url);
@@ -45,6 +45,8 @@ const altOgLocale = currentLang === 'en' ? 'es_ES' : 'en_US';
     <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
