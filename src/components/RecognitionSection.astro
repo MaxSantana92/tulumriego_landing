@@ -54,7 +54,7 @@ const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 
         <h2 class="font-headline" style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;letter-spacing:-0.04em;line-height:1;text-transform:uppercase;color:var(--color-text);">
           {t.recognition.title1}
-          <span style="display:block;font-size:0.55em;margin-top:0.4em;letter-spacing:-0.01em;word-spacing:0.12em;color:var(--color-text-muted);">{t.recognition.title2}</span>
+          <span style="display:block;font-size:0.55em;margin-top:0.4em;letter-spacing:-0.01em;word-spacing:0.12em;color:var(--color-text-muted);">{t.recognition.title2a}<br />{t.recognition.title2b}</span>
           <span class="glow-text-gold" style="color:var(--color-gold);">{t.recognition.title3}</span>
         </h2>
 
@@ -64,15 +64,14 @@ const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
           {t.recognition.category}
         </p>
 
-        <p style="font-size:0.95rem;line-height:1.75;color:var(--color-text-muted);padding:1.25rem;background:var(--color-surface-low);border-left:2px solid var(--color-gold);">
+        <p style="font-size:1rem;line-height:1.75;color:var(--color-text-muted);padding:1.25rem;background:var(--color-surface-low);border-left:2px solid var(--color-gold);">
           {t.recognition.descriptionParts.intro}
           <strong style="color:var(--color-text);">{t.recognition.descriptionParts.institution1}</strong>
           {t.recognition.descriptionParts.middle}
-          <strong style="color:var(--color-text);">{t.recognition.descriptionParts.institution2}</strong>
           {t.recognition.descriptionParts.outro}
         </p>
 
-        <p style="font-size:0.9rem;line-height:1.75;color:var(--color-text-muted);padding:1rem 1.25rem;background:var(--color-surface-low);border-left:2px solid var(--color-border);">
+        <p style="font-size:0.95rem;line-height:1.75;color:var(--color-text-muted);padding:1rem 1.25rem;background:var(--color-surface-low);border-left:2px solid var(--color-border);">
           {t.recognition.juryDetails}
         </p>
 

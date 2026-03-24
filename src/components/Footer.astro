@@ -11,10 +11,11 @@ const basePrefix = import.meta.env.BASE_URL.endsWith('/')
   : `${import.meta.env.BASE_URL}/`;
 const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 
+const termsUrl = 'https://drive.google.com/file/d/1J23FnOTB9ouo3kVVbwcSN7fwNPZJpXzP/view';
 const links = [
-  { label: t.footer.privacy, href: '#' },
-  { label: t.footer.terms,   href: '#' },
-  { label: t.footer.lab,     href: '#' },
+  { label: t.footer.privacy, href: termsUrl, external: true },
+  { label: t.footer.terms,   href: termsUrl, external: true },
+  { label: t.footer.lab,     href: '#',      external: false },
 ];
 ---
 
@@ -37,6 +38,8 @@ const links = [
     <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;align-items:center;">
       {links.map(l => (
         <a href={l.href} class="footer-link font-headline"
+          target={l.external ? '_blank' : undefined}
+          rel={l.external ? 'noopener noreferrer' : undefined}
           style="font-size:0.65rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);text-decoration:none;transition:color .2s;">
           {l.label}
         </a>

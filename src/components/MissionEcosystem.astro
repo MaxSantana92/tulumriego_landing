@@ -23,7 +23,7 @@ const steps = [
   </div>
 
   <div style="max-width:56rem;margin:0 auto;padding:0 2rem;text-align:center;position:relative;z-index:10;">
-    <h2 class="font-headline reveal" style="font-size:clamp(1.75rem,5vw,3.5rem);font-weight:900;letter-spacing:-0.04em;text-transform:uppercase;font-style:italic;line-height:1.05;margin-bottom:3.5rem;color:var(--color-text);">
+    <h2 class="font-headline reveal" style="font-size:clamp(1.75rem,5vw,3.5rem);font-weight:900;letter-spacing:0.02em;text-transform:uppercase;font-style:italic;line-height:1.05;margin-bottom:3.5rem;color:var(--color-text);">
       {t.mission.title1}
       <span class="glow-text" style="color:var(--color-primary);"> {t.mission.title2}</span>
     </h2>
@@ -44,7 +44,7 @@ const steps = [
 
     <!-- Heading -->
     <div class="reveal" style="text-align:center;margin-bottom:5rem;">
-      <h2 class="font-headline" style="font-size:clamp(1.75rem,4vw,3rem);font-weight:900;letter-spacing:-0.04em;text-transform:uppercase;margin-bottom:1rem;color:var(--color-text);">
+      <h2 class="font-headline" style="font-size:clamp(1.75rem,4vw,3rem);font-weight:900;letter-spacing:0.02em;text-transform:uppercase;margin-bottom:1rem;color:var(--color-text);">
         {t.ecosystem.heading1} <span class="glow-text" style="color:var(--color-primary);">{t.ecosystem.heading2}</span>
       </h2>
       <div style="width:6rem;height:1px;margin:0 auto;background:var(--color-border);"></div>
@@ -67,7 +67,7 @@ const steps = [
             <AppIcon name={step.icon} size="2.75rem" style={`color:var(--color-${step.color==='gold'?'gold':'primary'});`} />
           </div>
           <h4 class="font-headline" style="font-size:1.25rem;font-weight:900;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.875rem;color:var(--color-text);">{step.title}</h4>
-          <p style="font-size:0.85rem;line-height:1.7;max-width:16rem;color:var(--color-text-muted);">{step.desc}</p>
+          <p style="font-size:0.9rem;line-height:1.7;max-width:16rem;color:var(--color-text-muted);">{step.desc}</p>
         </div>
       ))}
     </div>

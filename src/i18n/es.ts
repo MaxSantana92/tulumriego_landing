@@ -34,7 +34,8 @@ export const es = {
   recognition: {
     badge: 'Reconocimiento a la Innovación',
     title1: '2do Puesto',
-    title2: 'Premio Provincial a la Innovación',
+    title2a: 'Premio Provincial',
+    title2b: 'a la Innovación',
     title3: 'San Juan 2025',
     category: 'Categoría: Servicio Innovador',
     descriptionParts: {
@@ -42,9 +43,8 @@ export const es = {
       institution1: 'Gobierno Provincial de San Juan',
       middle:
         '; no es novedad que nuestra provincia atraviesa una de las crisis hídricas más severas de su historia. La falta de agua no es solo un dato estadístico, es un dolor que afecta a nuestros productores, a nuestra economía y a nuestro futuro. Gestionar cada gota ya no es una opción, es una obligación vital.',
-      institution2: 'Facultad de Ingeniería de San Juan',
       outro:
-        '. Este galardón valida nuestro compromiso con la excelencia tecnológica y la eficiencia hídrica en la región.',
+        'Este galardón valida nuestro compromiso con la excelencia tecnológica y la eficiencia hídrica y energética en la región.',
     },
     juryDetails:
       'Para la evaluación de los proyectos, se conformó un jurado especializado integrado por representantes de universidades, la Unión Industrial de San Juan y la Cámara de la Economía del Conocimiento (Casetic). Los expertos analizaron cada propuesta con rigurosidad, considerando su originalidad, validación, sustento técnico-científico, impacto potencial y alineación con los ejes estratégicos del desarrollo provincial.',

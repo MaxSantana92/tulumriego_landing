@@ -41,13 +41,13 @@ const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 
       <!-- CTAs -->
       <div style="display:flex;flex-wrap:wrap;gap:1rem;padding-top:1rem;">
-        <button class="poly-cta font-headline" style="background:var(--color-primary);color:var(--color-midnight);font-size:0.85rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;padding:1.1rem 2rem;border:none;cursor:pointer;display:flex;align-items:center;gap:0.75rem;box-shadow:0 8px 32px var(--color-primary-glow);transition:filter .2s,transform .2s;">
+        <a href="#contact" class="poly-cta font-headline" style="background:var(--color-primary);color:var(--color-midnight);font-size:0.85rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;padding:1.1rem 2rem;border:none;cursor:pointer;display:flex;align-items:center;gap:0.75rem;box-shadow:0 8px 32px var(--color-primary-glow);transition:filter .2s,transform .2s;text-decoration:none;">
           {t.hero.cta1}
           <AppIcon name="arrow_right_alt" size="1.1rem" />
-        </button>
-        <button class="poly-cta font-headline" style="border:2px solid var(--color-gold);color:var(--color-gold);background:var(--color-gold-bg);font-size:0.85rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;padding:1.1rem 2rem;cursor:pointer;transition:filter .2s,transform .2s;">
+        </a>
+        <a href="#network" class="poly-cta font-headline" style="border:2px solid var(--color-gold);color:var(--color-gold);background:var(--color-gold-bg);font-size:0.85rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;padding:1.1rem 2rem;cursor:pointer;transition:filter .2s,transform .2s;text-decoration:none;">
           {t.hero.cta2}
-        </button>
+        </a>
       </div>
     </div>
 

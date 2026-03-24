@@ -34,7 +34,8 @@ export const en = {
   recognition: {
     badge: 'Innovation Recognition',
     title1: '2nd Place',
-    title2: 'Provincial Innovation Award',
+    title2a: 'Provincial',
+    title2b: 'Innovation Award',
     title3: 'San Juan 2025',
     category: 'Category: Innovative Service',
     descriptionParts: {
@@ -42,7 +43,6 @@ export const en = {
       institution1: 'Provincial Government of San Juan',
       middle:
         '; it is no surprise that our province is facing one of the most severe water crises in its history. Water scarcity is not just a statistic, it is a pain that affects our producers, our economy, and our future. Managing every drop is no longer an option, it is a vital obligation.',
-      institution2: 'Faculty of Engineering of San Juan',
       outro:
         '. This award validates our commitment to technological excellence and water efficiency in the region.',
     },
