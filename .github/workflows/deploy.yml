@@ -35,6 +35,7 @@ jobs:
         run: npm run build
         env:
           SITE_URL: https://tulumriego.com
+          BASE_PATH: /
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
