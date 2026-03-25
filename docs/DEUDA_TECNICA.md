@@ -13,10 +13,10 @@ Documento vivo para registrar deuda tecnica detectada durante la implementacion 
 ## Deuda tecnica abierta (prioridad alta)
 
 ### 1) Definir dominio real para `SITE_URL`
-- **Estado:** Pendiente.
-- **Impacto:** Si no se define, `canonical` y `sitemap` pueden salir con `https://example.com`.
-- **Donde aplica:** `astro.config.mjs` (`const site = process.env.SITE_URL ?? 'https://example.com';`).
-- **Accion requerida:** Configurar `SITE_URL` en entorno de build/deploy (GitHub Pages/CI).
+- **Estado:** Cerrada.
+- **Impacto:** Mitigado. `canonical`, `hreflang`, `og:url` y `sitemap` apuntan a `https://tulumriego.com`.
+- **Donde aplica:** `astro.config.mjs`, `.github/workflows/deploy.yml`, `public/robots.txt`.
+- **Accion ejecutada:** Fallback en `astro.config.mjs` fijado a `https://tulumriego.com`. Variable `SITE_URL` en workflow de deploy actualizada. `robots.txt` con URL absoluta de sitemap.
 - **Criterio de cierre:** `canonical` y `sitemap` publicados con dominio real.
 
 ### 2) Estrategia de fuentes no optimizada
@@ -63,7 +63,7 @@ Documento vivo para registrar deuda tecnica detectada durante la implementacion 
 
 ## Checklist rapido de cierre de deuda
 
-- [ ] `SITE_URL` configurado en entorno productivo.
+- [x] `SITE_URL` configurado en entorno productivo (`https://tulumriego.com`).
 - [x] Fuentes de texto self-host + `font-display: swap` + `preload`.
 - [x] Material Symbols localizado (sin carga remota en runtime).
 - [x] Eliminado `set:html`.
