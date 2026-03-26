@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config'
 import icon from 'astro-icon'
 
-const site = process.env.SITE_URL ?? 'https://maxsantana92.github.io'
-const base = process.env.BASE_PATH ?? '/tulumriego_landing'
+const site = 'https://tulumriego.com'
+const base = '/'
 
 export default defineConfig({
   site,

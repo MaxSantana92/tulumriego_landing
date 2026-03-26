@@ -33,8 +33,6 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
-        env:
-          SITE_URL: https://maxsantana92.github.io
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
