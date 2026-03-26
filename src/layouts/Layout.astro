@@ -29,8 +29,8 @@ const basePrefix = import.meta.env.BASE_URL.endsWith('/')
 const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
 const defaultDescription =
   currentLang === 'en'
-    ? 'Tulum Riego - Water intelligence. Precision irrigation powered by AI and real-time sensor data.'
-    : 'Tulum Riego - Inteligencia hidrica. Riego de precision impulsado por IA y datos en tiempo real.';
+    ? 'Tulum Riego - Water intelligence. Manage your irrigation tasks on demand and with real-time data.'
+    : 'Tulum Riego - Inteligencia hídrica. Gestioná tus labores de riego bajo demanda y con datos en tiempo real.';
 const pageDescription = description ?? defaultDescription;
 const siteOrigin = Astro.site ?? new URL(Astro.url.origin);
 const defaultCanonicalPath = currentLang === 'en' ? withBase('/en/') : withBase('/');
