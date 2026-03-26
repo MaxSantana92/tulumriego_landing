@@ -18,7 +18,7 @@ const {
   description,
   lang,
   canonicalPath,
-  ogImagePath = '/logo_tulumriego_sin_fondo.svg',
+  ogImagePath = '/android-chrome-512x512.png',
   robots = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
 } = Astro.props;
 const currentLang: Locale = lang ?? getLangFromUrl(Astro.url);
@@ -39,6 +39,9 @@ const canonicalUrl = new URL(resolvedCanonicalPath, siteOrigin).toString();
 const esUrl = new URL(withBase('/'), siteOrigin).toString();
 const enUrl = new URL(withBase('/en/'), siteOrigin).toString();
 const ogImageUrl = new URL(withBase(ogImagePath), siteOrigin).toString();
+const ogImageType = ogImagePath.endsWith('.png') ? 'image/png' : 'image/jpeg';
+const ogImageWidth = '512';
+const ogImageHeight = '512';
 const ogLocale = currentLang === 'en' ? 'en_US' : 'es_ES';
 const altOgLocale = currentLang === 'en' ? 'es_ES' : 'en_US';
 ---
@@ -71,6 +74,10 @@ const altOgLocale = currentLang === 'en' ? 'es_ES' : 'en_US';
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:type" content={ogImageType} />
+    <meta property="og:image:width" content={ogImageWidth} />
+    <meta property="og:image:height" content={ogImageHeight} />
     <meta property="og:image:alt" content={title} />
     <meta property="og:locale" content={ogLocale} />
     <meta property="og:locale:alternate" content={altOgLocale} />
@@ -78,6 +85,7 @@ const altOgLocale = currentLang === 'en' ? 'es_ES' : 'en_US';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={title} />
     <title>{title}</title>
     <link rel="preload" href={withBase('/fonts/space-grotesk-latin.woff2')} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={withBase('/fonts/plus-jakarta-sans-latin.woff2')} as="font" type="font/woff2" crossorigin />
