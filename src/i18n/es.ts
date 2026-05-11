@@ -44,7 +44,7 @@ export const es = {
       middle:
         '; no es novedad que nuestra provincia atraviesa una de las crisis hídricas más severas de su historia. La falta de agua no es solo un dato estadístico, es un dolor que afecta a nuestros productores, a nuestra economía y a nuestro futuro. Gestionar cada gota ya no es una opción, es una obligación vital.',
       outro:
-        'Este galardón valida nuestro compromiso con la excelencia tecnológica y la eficiencia hídrica y energética en la región.',
+        'Este galardón valida nuestro compromiso con la excelencia tecnológica, la eficiencia hídrica y energética en la región.',
     },
     juryDetails:
       'Para la evaluación de los proyectos, se conformó un jurado especializado integrado por representantes de universidades, la Unión Industrial de San Juan y la Cámara de la Economía del Conocimiento (Casetic). Los expertos analizaron cada propuesta con rigurosidad, considerando su originalidad, validación, sustento técnico-científico, impacto potencial y alineación con los ejes estratégicos del desarrollo provincial.',
@@ -95,6 +95,28 @@ export const es = {
     step3: {
       title: '3. Acción Directa',
       desc: 'Ejecución de riego milimétrico bajo demanda. Cero incertidumbre, máximo rendimiento.',
+    },
+  },
+  // Partnership
+  partnership: {
+    kicker: 'Alianza / Integración UNSJ',
+    title1: 'Integración científica',
+    title2: 'UNSJ + TulumRiego.',
+    intro:
+      'Potenciamos nuestra plataforma integrando la infraestructura del programa de Gestión Integral de Cuencas Hidrográficas de la Universidad Nacional de San Juan.',
+    projectLinkLabel: 'Enlace al proyecto:',
+    projectLinkText: 'unsjcuencas.com.ar',
+    item1: {
+      title: 'Datos en tiempo real',
+      desc: 'Conectividad directa con la red de estaciones meteorológicas estratégicamente distribuidas en los oasis de la provincia.',
+    },
+    item2: {
+      title: 'Respaldo técnico',
+      desc: 'Algoritmos de precisión basados en modelos hidrológicos validados por expertos en recursos hídricos de la UNSJ.',
+    },
+    item3: {
+      title: 'Optimización hídrica',
+      desc: 'Máxima eficiencia mediante la correlación inteligente entre datos climáticos de cuenca y la demanda real de tus cultivos.',
     },
   },
   // Form

@@ -1,0 +1,26 @@
+
+> tulum-riego-landing@1.0.0 dev
+> astro dev --host 127.0.0.1 --port 4321
+
+17:36:19 [types] Generated 4ms
+17:36:19 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v4.16.19 ready in 1353 ms
+
+┃ Local    http://127.0.0.1:4321/
+
+17:36:19 watching for file changes...
+17:36:32 [200] / 20ms
+17:36:37 [200] / 12ms
+17:36:37 [200] /en/ 13ms
+17:49:29 [watch] src/i18n/es.ts
+17:49:29 [watch] src/i18n/en.ts
+17:50:49 [watch] src/i18n/es.ts
+17:52:19 [watch] src/i18n/en.ts
+17:56:14 [watch] src/components/PartnershipSection.astro
+18:35:18 [watch] src/i18n/es.ts
+18:35:19 [watch] src/i18n/en.ts
+18:38:07 [watch] src/i18n/es.ts
+18:38:08 [watch] src/i18n/en.ts
+18:38:08 [watch] src/components/PartnershipSection.astro
+18:38:13 [watch] src/components/PartnershipSection.astro

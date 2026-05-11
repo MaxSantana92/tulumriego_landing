@@ -1,0 +1,233 @@
+---
+import type { Translations } from '../i18n/index';
+import AppIcon from './AppIcon.astro';
+
+interface Props { t: Translations; }
+const { t } = Astro.props;
+
+const basePrefix = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${basePrefix}${path.replace(/^\/+/, '')}`;
+const unsjProjectUrl = 'http://unsjcuencas.com.ar/';
+
+const items = [
+  { icon: 'sensors', title: t.partnership.item1.title, desc: t.partnership.item1.desc },
+  { icon: 'science', title: t.partnership.item2.title, desc: t.partnership.item2.desc },
+  { icon: 'water_drop', title: t.partnership.item3.title, desc: t.partnership.item3.desc },
+];
+---
+
+<section class="reveal partnership-section" style="padding:6rem 0;position:relative;overflow:hidden;background:var(--color-surface-low);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);">
+  <div class="partnership-grid-bg" aria-hidden="true"></div>
+
+  <div class="partnership-shell" style="max-width:80rem;margin:0 auto;padding:0 2rem;position:relative;z-index:2;">
+    <div class="partnership-layout">
+      <div class="reveal-left partnership-copy">
+        <p class="font-headline" style="margin:0 0 1rem;font-size:0.805rem;font-weight:900;letter-spacing:0.3em;text-transform:uppercase;color:var(--color-gold);">
+          {t.partnership.kicker}
+        </p>
+        <h2 class="font-headline" style="font-size:clamp(1.8rem,4vw,3.25rem);font-weight:900;letter-spacing:0.02em;line-height:1.05;text-transform:uppercase;font-style:italic;margin:0 0 1.5rem;color:var(--color-text);">
+          {t.partnership.title1}
+          <span class="glow-text partnership-title-accent" style="color:var(--color-primary);">{t.partnership.title2}</span>
+        </h2>
+        <p style="font-size:1.125rem;line-height:1.8;margin:0;color:var(--color-text-muted);max-width:42rem;">
+          {t.partnership.intro}
+          {' '}
+          {t.partnership.projectLinkLabel}
+          {' '}
+          <a class="partnership-intro-link" href={unsjProjectUrl} target="_blank" rel="noopener noreferrer">
+            {t.partnership.projectLinkText}
+          </a>
+        </p>
+      </div>
+
+      <div class="reveal-right partnership-badge" aria-hidden="true">
+        <div class="station-orbit">
+          <div class="station-logo-panel">
+            <img
+              src={withBase('/logo-nuevo-unsj.png')}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="unsj-logo"
+            />
+          </div>
+          <span class="orbit-dot dot-a"></span>
+          <span class="orbit-dot dot-b"></span>
+          <span class="orbit-dot dot-c"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="partnership-items stagger-container">
+      {items.map((item) => (
+        <article class="stagger-item partnership-item">
+          <div class="partnership-icon">
+            <AppIcon name={item.icon} size="1.75rem" />
+          </div>
+          <div>
+            <h3 class="font-headline" style="font-size:1rem;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 0.65rem;color:var(--color-text);">
+              {item.title}
+            </h3>
+            <p style="font-size:1.025rem;line-height:1.7;margin:0;color:var(--color-text-muted);">
+              {item.desc}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .partnership-grid-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--color-primary) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-primary) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+    mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  }
+  .partnership-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .partnership-title-accent {
+    display: block;
+  }
+  .partnership-badge {
+    display: none;
+    justify-content: center;
+  }
+  .partnership-intro-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-primary) 55%, transparent);
+    text-underline-offset: 0.28em;
+    transition: color .2s, text-decoration-color .2s;
+  }
+  .partnership-intro-link:hover,
+  .partnership-intro-link:focus-visible {
+    color: var(--color-text);
+    text-decoration-color: var(--color-primary);
+  }
+  .station-orbit {
+    position: relative;
+    width: 15rem;
+    aspect-ratio: 1;
+    border: 1px solid var(--color-border);
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--color-surface-high) 82%, transparent);
+  }
+  .station-orbit::before,
+  .station-orbit::after {
+    content: '';
+    position: absolute;
+    border: 1px solid var(--color-primary);
+    opacity: 0.18;
+    inset: 2rem;
+    border-radius: 50%;
+  }
+  .station-orbit::after {
+    inset: 3.8rem;
+    border-color: var(--color-gold);
+  }
+  .station-logo-panel {
+    position: relative;
+    width: min(11.5rem, 76%);
+    min-height: 6rem;
+    display: grid;
+    place-items: center;
+    padding: 1rem 1.15rem;
+    background: color-mix(in srgb, var(--color-bg) 56%, var(--color-surface-high));
+    border: 1px solid var(--color-border);
+    box-shadow: 0 0 32px var(--color-primary-glow);
+    clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%);
+    z-index: 2;
+  }
+  .station-logo-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0.55rem;
+    border: 1px solid color-mix(in srgb, var(--color-gold) 42%, transparent);
+    opacity: 0.45;
+    clip-path: inherit;
+    pointer-events: none;
+  }
+  .unsj-logo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-height: 4rem;
+    object-fit: contain;
+    filter: drop-shadow(0 0 14px var(--color-primary-glow));
+  }
+  .orbit-dot {
+    position: absolute;
+    width: 0.65rem;
+    aspect-ratio: 1;
+    background: var(--color-primary);
+    box-shadow: 0 0 16px var(--color-primary-glow);
+    rotate: 45deg;
+  }
+  .dot-a { top: 2.8rem; right: 4rem; }
+  .dot-b { bottom: 3rem; left: 4.5rem; background: var(--color-gold); box-shadow: var(--shadow-gold); }
+  .dot-c { top: 50%; left: 2.4rem; }
+  .partnership-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .partnership-item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-high);
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+  }
+  .partnership-icon {
+    width: 3.25rem;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    background: var(--color-input-bg);
+    clip-path: polygon(16% 0, 100% 0, 84% 100%, 0 100%);
+  }
+  .partnership-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 24px var(--color-primary-glow);
+  }
+  @media (min-width: 768px) {
+    .partnership-layout {
+      grid-template-columns: minmax(0, 1fr) 18rem;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+    .partnership-badge {
+      display: flex;
+    }
+    .partnership-items {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .partnership-item {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+  }
+</style>

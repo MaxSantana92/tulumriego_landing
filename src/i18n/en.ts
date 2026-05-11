@@ -44,7 +44,7 @@ export const en = {
       middle:
         '; it is no surprise that our province is facing one of the most severe water crises in its history. Water scarcity is not just a statistic, it is a pain that affects our producers, our economy, and our future. Managing every drop is no longer an option, it is a vital obligation.',
       outro:
-        '. This award validates our commitment to technological excellence and water efficiency in the region.',
+        '. This award validates our commitment to technological excellence and efficient water and energy use in the region.',
     },
     juryDetails:
       'Project evaluation was conducted by a specialized jury made up of representatives from universities, the Union Industrial de San Juan, and the Knowledge Economy Chamber (Casetic). The experts reviewed each proposal with rigor, considering originality, validation, technical-scientific foundation, potential impact, and alignment with the strategic priorities of provincial development.',
@@ -95,6 +95,28 @@ export const en = {
     step3: {
       title: '3. Direct Action',
       desc: 'Millimetric on-demand irrigation execution. Zero waste, maximum performance.',
+    },
+  },
+  // Partnership
+  partnership: {
+    kicker: 'UNSJ Alliance / Integration',
+    title1: 'Scientific integration',
+    title2: 'UNSJ + TulumRiego.',
+    intro:
+      'We strengthen our platform by integrating the infrastructure of the Integrated Watershed Management program at the National University of San Juan.',
+    projectLinkLabel: 'Project link:',
+    projectLinkText: 'unsjcuencas.com.ar',
+    item1: {
+      title: 'Real-time data',
+      desc: 'Direct connectivity with the network of weather stations strategically distributed across the province’s oases.',
+    },
+    item2: {
+      title: 'Technical backing',
+      desc: 'Precision algorithms based on hydrological models validated by UNSJ water-resources experts.',
+    },
+    item3: {
+      title: 'Water optimization',
+      desc: 'Maximum efficiency through intelligent correlation between watershed climate data and the real demand of your crops.',
     },
   },
   // Form
